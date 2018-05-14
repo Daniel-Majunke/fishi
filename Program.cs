@@ -47,11 +47,15 @@ namespace UltimateFishBot.Classes.BodyParts
             Console.WriteLine(secondImage.PixelFormat);
 
             CompareImages compareImages = new CompareImages();
-         var coordinateList = compareImages.ImageCompareArray(firstImage, secondImage);
-            foreach (var c in coordinateList)
-            {
-                Console.WriteLine(c.X + @"/ " + c.Y);
-            }
+            var coordinateList = compareImages.ImageCompareArray(firstImage, secondImage);
+            
+            Random rnd = new Random();
+            var randomNumber = rnd.Next(0, coordinateList.Count);
+            var x = coordinateList[randomNumber].X;
+            var y = coordinateList[randomNumber].Y;
+
+            new MouseMove(x, y);
+          
             
            
             
