@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Fishbot;
-using NAudio.CoreAudioApi;
-using NAudio.Wave;
 
 namespace UltimateFishBot.Classes.BodyParts
 {
@@ -34,10 +25,17 @@ namespace UltimateFishBot.Classes.BodyParts
 
     class Program
     {
-       // public static bool Wait = false;
-        static WaveOutCapabilities Cap;
+        // public static bool Wait = false;
+        // static WaveOutCapabilities Cap;
         static void Main(string[] args)
         {
+
+
+
+
+
+
+
 
             var PathFirstImage = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + @"\Screenshot1.png";
             var PathSecondImage = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + @"\Screenshot2.png";
@@ -47,15 +45,16 @@ namespace UltimateFishBot.Classes.BodyParts
             Console.WriteLine(secondImage.PixelFormat);
 
             CompareImages compareImages = new CompareImages();
-         var coordinateList = compareImages.ImageCompareArray(firstImage, secondImage);
-            foreach (var c in coordinateList)
-            {
-                Console.WriteLine(c.X + @"/ " + c.Y);
-            }
-            
-           
-            
-            //  // new MouseMove();
+            var coordinateList = compareImages.ImageCompareArray(firstImage, secondImage);
+           Random rnd = new Random();
+            var randomCoordFromList = rnd.Next(0, coordinateList.Count);
+            var x = coordinateList[randomCoordFromList].X;
+            var y = coordinateList[randomCoordFromList].Y;
+
+
+
+
+             new MouseMove(x, y);
 
             //  var enumerator = new MMDeviceEnumerator();
             //var device =   enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);
@@ -81,7 +80,7 @@ namespace UltimateFishBot.Classes.BodyParts
 
 
             //    Console.WriteLine();
-           Console.WriteLine("daniel");
+            Console.WriteLine();
             Console.ReadLine();
         }
              
