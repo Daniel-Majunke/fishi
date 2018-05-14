@@ -50,7 +50,7 @@ namespace UltimateFishBot.Classes.BodyParts
          var coordinateList = compareImages.ImageCompareArray(firstImage, secondImage);
             foreach (var c in coordinateList)
             {
-                Console.WriteLine(c.X + "/ " + c.Y);
+                Console.Write(c.X + @"/ " + c.Y);
             }
             
            
@@ -81,7 +81,7 @@ namespace UltimateFishBot.Classes.BodyParts
 
 
             //    Console.WriteLine();
-            //    Console.WriteLine(i++);
+           Console.WriteLine("daniel");
             Console.ReadLine();
         }
              
