@@ -32,6 +32,7 @@ namespace Fishbot
                         if (firstPixel != secondPixel)
                         {
                             flag = false;
+                           // Console.WriteLine(i + "/ " + j);
                           Coordinates c= new Coordinates(i, j);
                             ArrayCoordinatesDistinguishImages.Add(c);
                             break;

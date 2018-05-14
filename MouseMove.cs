@@ -13,31 +13,15 @@ namespace Fishbot
 
     class MouseMove
     {
-        private int X { get; set; }
-        private int Y { get; set; }
-
-        public MouseMove(int x, int y)
-        {
-            X = x;
-            Y = y;
-
-            moveMouseToPosition(X, Y);
-
-
-        }
-
-
-        private void moveMouseToPosition(int x, int y)
+        public MouseMove()
         {
             Control control = new Control();
             Point cursorPos = Cursor.Position;
-            Point coordinate = new Point(x, y);
-
+            Point coordinate = new Point(500,1000);
+            
             cursorPos.X = control.PointToScreen(coordinate).X;
             cursorPos.Y = control.PointToScreen(coordinate).Y;
             Cursor.Position = cursorPos;
-
         }
-
     }
 }
