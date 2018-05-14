@@ -46,15 +46,7 @@ namespace UltimateFishBot.Classes.BodyParts
 
             CompareImages compareImages = new CompareImages();
             var coordinateList = compareImages.ImageCompareArray(firstImage, secondImage);
-           Random rnd = new Random();
-            var randomCoordFromList = rnd.Next(0, coordinateList.Count);
-            var x = coordinateList[randomCoordFromList].X;
-            var y = coordinateList[randomCoordFromList].Y;
-
-
-
-
-             new MouseMove(x, y);
+            new MouseMove(coordinateList);
 
             //  var enumerator = new MMDeviceEnumerator();
             //var device =   enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);

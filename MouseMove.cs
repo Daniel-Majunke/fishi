@@ -14,9 +14,13 @@ namespace Fishbot
     class MouseMove
     {
        
-        public MouseMove(int x, int y)
+        public MouseMove(List<Coordinates> coordinateList)
         {
-           
+            Random rnd = new Random();
+            var randomCoordFromList = rnd.Next(0, coordinateList.Count);
+            var x = coordinateList[randomCoordFromList].X;
+            var y = coordinateList[randomCoordFromList].Y;
+
             MouseMoveToPoint(x, y);
         }
 
